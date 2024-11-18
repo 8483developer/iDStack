@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Marks and Grade</title>
+</head>
+<body>
+    <h2>Enter Subject Marks</h2>
+    <label>Subject 1: </label>
+    <input type="number" id="subject1" min="0" max="100"><br><br>
+
+    <label>Subject 2: </label>
+    <input type="number" id="subject2" min="0" max="100"><br><br>
+
+    <label>Subject 3: </label>
+    <input type="number" id="subject3" min="0" max="100"><br><br>
+
+    <label>Subject 4: </label>
+    <input type="number" id="subject4" min="0" max="100"><br><br>
+
+    <button onclick="calculateMarks()">Calculate Total and Average</button>
+    <button onclick="checkGrade()">Check Grade</button>
+
+    <h3>Results:</h3>
+    <p id="total"></p>
+    <p id="average"></p>
+    <p id="grade"></p>
+
+    <script>
+        // Global variables to store total and average
+        let total = 0;
+        let average = 0;
+
+        // Function to calculate total marks and average
+        function calculateMarks() {
+            let subject1 = parseInt(document.getElementById("subject1").value) ;
+            let subject2 = parseInt(document.getElementById("subject2").value) ;
+            let subject3 = parseInt(document.getElementById("subject3").value) ;
+            let subject4 = parseInt(document.getElementById("subject4").value) ;
+
+            total = subject1 + subject2 + subject3 + subject4;
+            average = total / 4;
+
+            document.getElementById("total").innerText = "Total Marks: " + total;
+            document.getElementById("average").innerText = "Average Marks: " + average.toFixed(2);
+        }
+
+        // Function to check grade based on average
+        function checkGrade() {
+            let grade;
+
+            if (average >= 90) {
+                grade = "A";
+            } else if (average >= 75) {
+                grade = "B";
+            } else if (average >= 50) {
+                grade = "C";
+            } else {
+                grade = "D";
+            }
+
+            document.getElementById("grade").innerText = "Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
