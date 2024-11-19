@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  
